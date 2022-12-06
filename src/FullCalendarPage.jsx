@@ -1,22 +1,25 @@
-import React from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
-import { INITIAL_EVENTS, createEventId } from "./event-utils";
+import React from "react"
+import FullCalendar, { formatDate } from "@fullcalendar/react"
+import dayGridPlugin from "@fullcalendar/daygrid"
+import timeGridPlugin from "@fullcalendar/timegrid"
+import interactionPlugin from "@fullcalendar/interaction"
+import { INITIAL_EVENTS, createEventId } from "./event-utils"
 
 export default function Updated() {
   return (
     <div>
-      <h1>Home</h1>
+      <div>
+        <h1>Ois</h1>
+        <button>+ Schedule New Event</button>
+      </div>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         headerToolbar={{
-          left: "prev,next today",
-          center: "title",
-          right: "dayGridMonth,timeGridWeek,timeGridDay"
+          left: "title prev,next today",
+          center: "",
+          right: "timeGridWeek,timeGridDay",
         }}
-        initialView="dayGridMonth"
+        initialView="timeGridWeek"
         editable={true}
         selectable={true}
         selectMirror={true}
@@ -34,5 +37,5 @@ export default function Updated() {
             */
       />
     </div>
-  );
+  )
 }
